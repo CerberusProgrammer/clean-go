@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Go Variables Tutorial</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    <h1>{{.Title}}</h1>
+    <p>{{.Body}}</p>
+    <h2>Examples:</h2>
+    {{range .Examples}}
+        <div class="example">
+            <code>{{.}}</code>
+        </div>
+    {{end}}
+</body>
+</html>
