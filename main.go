@@ -1,14 +1,15 @@
 package main
 
 import (
-	"clean-go/src/variables"
+	"clean-go/src/config"
+	"clean-go/src/pages/variables"
 	"fmt"
 	"net/http"
 )
 
 func main() {
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/css", fs))
+	fs := http.FileServer(http.Dir(config.StaticDir))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/variables/declarations", declarationsHandler)
 	http.HandleFunc("/variables/types", typesHandler)
