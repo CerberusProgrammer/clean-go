@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Go Variables Tutorial</title>
+    <title>Go Tutorial</title>
+    <link rel="stylesheet" href="/static/css/index.css">
 </head>
 <body>
-    <div>
-        <a href="/variables/declarations">Declarations</a>
-        <a href="/variables/types">Types</a>
-    </div>
-
-    <h1 class="custom">{{.Title}}</h1>
-    <pre>{{.Body}}</pre>
-    <h2>Examples:</h2>
-    {{range .Examples}}
-        <div class="code-box">
-            <code>{{.}}</code>
-        </div>
-    {{end}}
+    <nav>
+        {{range .Navigation.Routes}}
+            <a href="{{.Path}}">{{.Name}}</a>
+        {{end}}
+    </nav>
+    <main>
+        <h1>{{.Title}}</h1>
+        <pre>{{.Body}}</pre>
+        <h2>Examples:</h2>
+        {{range .Examples}}
+            <div class="code-box">
+                <code>{{.}}</code>
+            </div>
+        {{end}}
+    </main>
 </body>
 </html>
