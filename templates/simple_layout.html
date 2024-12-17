@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Go Variables Tutorial</title>
+</head>
+<body>
+    <h1 class="custom">{{.Title}}</h1>
+    <pre>{{.Body}}</pre>
+    <h2>Examples:</h2>
+    {{range .Examples}}
+        <div class="code-box">
+            <code>{{.}}</code>
+        </div>
+    {{end}}
+</body>
+</html>
