@@ -7,7 +7,7 @@ import (
 )
 
 func VariableTypes(w http.ResponseWriter) {
-	example := models.SimpleLayoutStructure{
+	example := models.Layout{
 		Title: "Variable Types",
 		Body: `Go is a statically typed language, which means that the type of a variable is known at compile time.
 
@@ -30,6 +30,7 @@ Go has the following basic types:
 			"var flag bool = true",
 			"var fnum float64 = 3.14",
 		},
+		Navigation: models.GetMainNavigation(),
 	}
 
 	tmpl := template.Must(template.ParseFiles("templates/simple_layout.html"))
