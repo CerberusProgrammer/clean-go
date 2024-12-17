@@ -1,18 +1,13 @@
 package variables
 
 import (
+	"clean-go/src/models"
 	"html/template"
 	"net/http"
 )
 
-type VariableExample struct {
-	Title    string   `json:"title"`
-	Body     string   `json:"body"`
-	Examples []string `json:"examples"`
-}
-
 func VariableDeclaration(w http.ResponseWriter) {
-	example := VariableExample{
+	example := models.SimpleLayoutStructure{
 		Title: "Variable Declaration",
 		Body: `Variables are declared using the var keyword. 
 The type of the variable is optional, but it is recommended to specify the type to avoid any confusion.
