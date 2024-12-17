@@ -14,7 +14,12 @@ type VariableExample struct {
 func VariableDeclaration(w http.ResponseWriter) {
 	example := VariableExample{
 		Title: "Variable Declaration",
-		Body:  "Variables are declared using the var keyword. The type of the variable is optional, but it is recommended to specify the type to avoid any confusion.",
+		Body: `Variables are declared using the var keyword. 
+The type of the variable is optional, but it is recommended to specify the type to avoid any confusion.
+
+Syntax:
+var variable_name type = value
+`,
 		Examples: []string{
 			"var str string = \"Hello, Go!\"",
 			"var num int = 42",
@@ -23,7 +28,7 @@ func VariableDeclaration(w http.ResponseWriter) {
 		},
 	}
 
-	tmpl := template.Must(template.ParseFiles("templates/declarations.html"))
+	tmpl := template.Must(template.ParseFiles("templates/simple_layout.html"))
 	w.Header().Set("Content-Type", "text/html")
 	tmpl.Execute(w, example)
 }
