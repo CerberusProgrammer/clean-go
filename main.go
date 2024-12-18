@@ -11,6 +11,10 @@ func main() {
 	fs := http.FileServer(http.Dir(config.StaticDir))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, config.TemplatesDir+"/home_layout.html")
+	})
+
 	http.HandleFunc("/variables/declarations", declarationsHandler)
 	http.HandleFunc("/variables/types", typesHandler)
 
