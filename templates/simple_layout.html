@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Go Tutorial</title>
     <link rel="stylesheet" href="/static/css/index.css">
 </head>
+
 <body>
     <nav>
         <a href="/">Clean Go</a>
         {{range .Navigation.Routes}}
-            <a href="{{.Path}}">{{.Name}}</a>
+        <a href="{{.Path}}">{{.Name}}</a>
         {{end}}
     </nav>
     <main>
         <h1>{{.Title}}</h1>
-        <pre>{{.Body}}</pre>
-        <h2>Examples:</h2>
-        {{range .Examples}}
-            <div class="code-box">
-                <code>{{.}}</code>
+        <div class="content-box">
+            <div class="content-body">
+                <pre>{{.Body}}</pre>
             </div>
-        {{end}}
+            <div class="content-examples">
+                <h2>Examples:</h2>
+                {{range .Examples}}
+                <div class="code-box">
+                    <code>{{.}}</code>
+                </div>
+                {{end}}
+            </div>
+        </div>
     </main>
 </body>
+
 </html>
