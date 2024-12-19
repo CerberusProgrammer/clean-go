@@ -15,8 +15,7 @@ func main() {
 		http.ServeFile(w, r, config.TemplatesDir+"/home_layout.html")
 	})
 
-	http.HandleFunc("/variables/declarations", declarationsHandler)
-	http.HandleFunc("/variables/types", typesHandler)
+	http.HandleFunc("/variables", declarationsHandler)
 
 	fmt.Println("Server is running on port 8080...")
 	http.ListenAndServe(":8080", nil)
@@ -24,8 +23,4 @@ func main() {
 
 func declarationsHandler(w http.ResponseWriter, r *http.Request) {
 	variables.VariableDeclaration(w)
-}
-
-func typesHandler(w http.ResponseWriter, r *http.Request) {
-	variables.VariableTypes(w)
 }
