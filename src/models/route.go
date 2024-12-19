@@ -12,8 +12,7 @@ type Navigation struct {
 func GetMainNavigation() Navigation {
 	return Navigation{
 		Routes: []Route{
-			{Name: "Declaration", Path: "/variables/declarations"},
-			{Name: "Types", Path: "/variables/types"},
+			{Name: "Variables", Path: "/variables"},
 		},
 	}
 }
