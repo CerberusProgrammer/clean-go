@@ -2,6 +2,7 @@ package variables
 
 import (
 	"clean-go/src/models"
+	"clean-go/src/routes"
 	"html/template"
 	"net/http"
 )
@@ -71,7 +72,7 @@ Here are the list of types that can be used in Go:
 			"select { case <-ch: }",
 			"for i := range arr { }",
 		},
-		Navigation: models.GetMainNavigation(),
+		Navigation: routes.GetMainNavigation(),
 	}
 
 	tmpl := template.Must(template.ParseFiles("templates/simple_layout.html"))

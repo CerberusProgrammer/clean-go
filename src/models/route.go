@@ -8,11 +8,3 @@ type Route struct {
 type Navigation struct {
 	Routes []Route
 }
-
-func GetMainNavigation() Navigation {
-	return Navigation{
-		Routes: []Route{
-			{Name: "Variables", Path: "/variables"},
-		},
-	}
-}
